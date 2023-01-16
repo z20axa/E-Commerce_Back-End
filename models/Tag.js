@@ -21,6 +21,8 @@ Tag.init(
     tag_name: {
       // * string
       type: DataTypes.STRING,
+      // * Doesn't allow null values.
+      allowNull: false,
     },
   },
   {
