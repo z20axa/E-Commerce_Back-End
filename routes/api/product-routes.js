@@ -1,12 +1,12 @@
+// pacakges and module imports
 const router = require('express').Router();
 const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // The `/api/products` endpoint
 
-// get all products
+// GET all products
 router.get('/', async (req, res) => {
-  // find all products
-  // be sure to include its associated Category and Tag data
+  // find all products and include its associated Category and Tag data
   try {
     const allProducts = await Product.findAll({
     include: [Product],
@@ -18,13 +18,12 @@ router.get('/', async (req, res) => {
   }
 });
 
-// get one product
+// GET a single product by id
 router.get('/:id', (req, res) => {
-  // find a single product by its `id`
-  // be sure to include its associated Category and Tag data
+  // find a single product by its `id` and include its associated Category and Tag data
 });
 
-// create new product
+// CREATE a new product
 router.post('/', (req, res) => {
   /* req.body should look like this...
     {
@@ -56,7 +55,7 @@ router.post('/', (req, res) => {
     });
 });
 
-// update product
+// UPDATE a product by its id
 router.put('/:id', (req, res) => {
   // update product data
   Product.update(req.body, {
@@ -98,6 +97,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
+// DELETE a product by its id
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
   Product.destroy({
