@@ -1,11 +1,11 @@
+// pacakges and module imports
 const router = require('express').Router();
 const { Category, Product } = require('../../models');
 
 // The `/api/categories` endpoint
 
 router.get('/', async (req, res) => {
-  // find all categories
-  // be sure to include its associated Products
+  // find all categories and include its associated Products
   try {
     const allCategories = await Category.findAll({
     include: [Product]
@@ -17,8 +17,7 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-  // find one category by its `id` value
-  // be sure to include its associated Products
+  // find one category by its `id` value and include its associated Products
   try {
     const oneCategory = await Category.findOne({
       where: {
@@ -33,7 +32,7 @@ router.get('/:id', async (req, res) => {
 });
 
 router.post('/', (req, res) => {
-  // create a new category.
+  // create a new category
   Category.create(req.body)
   .then(data => res.json(data));
 });
