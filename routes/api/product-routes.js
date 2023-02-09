@@ -4,13 +4,13 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // The `/api/products` endpoint
 
-// GET all products
+// GET all products route
 router.get('/', async (req, res) => {
   // find all products and include its associated Category and Tag data
   try {
     const allProducts = await Product.findAll({
-    include: [Product],
-    include: [Category]
+    include: [Category],
+    include: [Tag]
     })
     res.status(200).json(allProducts);
   } catch (err) {
@@ -18,21 +18,25 @@ router.get('/', async (req, res) => {
   }
 });
 
-// GET a single product by id
-router.get('/:id', (req, res) => {
+// GET a single product by id route
+router.get('/:id', async (req, res) => {
   // find a single product by its `id` and include its associated Category and Tag data
+  try {
+    const oneProduct = await Product.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [Category],
+      include: [Tag],
+    })
+    res.status(200).json(oneProduct);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
-// CREATE a new product
+// CREATE a new product route
 router.post('/', (req, res) => {
-  /* req.body should look like this...
-    {
-      product_name: "Basketball",
-      price: 200.00,
-      stock: 3,
-      tagIds: [1, 2, 3, 4]
-    }
-  */
   Product.create(req.body)
     .then((product) => {
       // if there's product tags, we need to create pairings to bulk create in the ProductTag model
@@ -55,7 +59,7 @@ router.post('/', (req, res) => {
     });
 });
 
-// UPDATE a product by its id
+// UPDATE a product by its id route
 router.put('/:id', (req, res) => {
   // update product data
   Product.update(req.body, {
@@ -97,7 +101,7 @@ router.put('/:id', (req, res) => {
     });
 });
 
-// DELETE a product by its id
+// DELETE a product by its id route
 router.delete('/:id', (req, res) => {
   // delete one product by its `id` value
   Product.destroy({
