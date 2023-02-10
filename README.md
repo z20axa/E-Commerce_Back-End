@@ -40,10 +40,14 @@ THEN I am able to successfully create, update, and delete data in my database
 
 ## Walkthrough Video Link
 
-- Please follow [THIS LINK!](https://www.loom.com/share/966a1a04ab0f49659c1fa0ae3778a471)
+- Please follow [THIS LINK!](https://www.loom.com/share/5c955486e97d4a44b53360fca0b7db7e)
 
 ## App Screenshots
 
 ![Capture1](./utils/public/images/Capture1.PNG)
 ![Capture2](./utils/public/images/Capture2.PNG)
 ![Capture3](./utils/public/images/Capture3.PNG)
+![Capture4](./utils/public/images/Capture4.PNG)
+![Capture5](./utils/public/images/Capture5.PNG)
+![Capture6](./utils/public/images/Capture6.PNG)
+![Capture7](./utils/public/images/Capture7.PNG)
