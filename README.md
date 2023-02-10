@@ -44,10 +44,10 @@ THEN I am able to successfully create, update, and delete data in my database
 
 ## App Screenshots
 
-![Capture1](./utils/public/images/Capture1.PNG)
-![Capture2](./utils/public/images/Capture2.PNG)
-![Capture3](./utils/public/images/Capture3.PNG)
-![Capture4](./utils/public/images/Capture4.PNG)
-![Capture5](./utils/public/images/Capture5.PNG)
-![Capture6](./utils/public/images/Capture6.PNG)
-![Capture7](./utils/public/images/Capture7.PNG)
+![Capture1](./assets/public/images/Capture1.PNG)
+![Capture2](./assets/public/images/Capture2.PNG)
+![Capture3](./assets/public/images/Capture3.PNG)
+![Capture4](./assets/public/images/Capture4.PNG)
+![Capture5](./assets/public/images/Capture5.PNG)
+![Capture6](./assets/public/images/Capture6.PNG)
+![Capture7](./assets/public/images/Capture7.PNG)
